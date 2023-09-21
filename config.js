@@ -18,10 +18,11 @@ global.namebot = 'Konz - MD'
 global.wm = '© KonzBot Whatsapp'
 global.stickpack = '© Sticker by'
 global.stickauth = 'WinTheBot'
-global.fotonya = 'https://telegra.ph/file/b11d2895ab50e33d8c909.jpg'
+global.fotonya =
+  'https://img.freepik.com/premium-photo/anime-woman-portrait-manga-style-cartoon-illustration_691560-3925.jpg?w=2000';
 global.fotonya2 = `https://telegra.ph/file/6f49668f7fe0d837bf8ab.jpg`
 // Link Sosmed
-global.sig = 'https://instagram.com/Win?igshid=NTc4MTIwNjQ2YQ=='
+global.sig = 'https://instagram.com/PradiptaAhmad'
 global.syt = 'https://youtube.com/@jessnolimit'
 global.sgh = 'https://github.com/PradiptaAhmad'
 global.sgc = 'https://chat.whatsapp.com/Ksg1HJO2wSsEBUXUhulWun'
