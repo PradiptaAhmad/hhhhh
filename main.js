@@ -168,7 +168,7 @@ async function connectionUpdate(update) {
         const infoMsg = `
    *Bot Info:*
    
-   ✓ Name: ${name || 'Cherly-MD'}
+   ✓ Name: ${name || 'Konz-MD'}
    ✓ Tag: @${jid.split('@')[0]}
    ✓ Speed ping: ${pingStart - new Date()}ms
    ✓ Date: ${currentTime.toDateString()}
@@ -176,9 +176,9 @@ async function connectionUpdate(update) {
    ✓ Day: ${currentTime.toLocaleDateString('en-US', { weekday: 'long' })}
    ✓ Description: *lapor owner jika ada bug*.
         `;
-        conn.sendMessage(nomorwa + "@s.whatsapp.net", {
+        conn.sendMessage(6285156241839 + "@s.whatsapp.net", {
             text: infoMsg,
-            mentions: [nomorwa + "@s.whatsapp.net", jid]
+            mentions: [6285156241839 + "@s.whatsapp.net", jid]
         }, {
             quoted: null
         })

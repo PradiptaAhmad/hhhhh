@@ -1,4 +1,3 @@
-import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
 import yts from 'yt-search'
 var handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `Judulnya?`
