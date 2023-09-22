@@ -9,6 +9,9 @@
         "src": "src",
         "plugins": "plugins"
     },
+    "engines": {
+        "node": "18.x"
+    }
     "scripts": {
         "start": "node index.js",
         "test": "node test.js",
