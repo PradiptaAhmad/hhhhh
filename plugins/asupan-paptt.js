@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
 handler.help = ['paptt']
 handler.tags = ['asupan']
 handler.command = /^(paptt)$/i
-handler.premium = true
+handler.premium = false
 export default handler
 
 global.paptt = [
