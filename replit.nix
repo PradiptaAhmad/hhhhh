@@ -1,5 +1,6 @@
 { pkgs }: {
 	deps = [
+    pkgs.nano
     pkgs.nodejs_20
     pkgs.neofetch
 		pkgs.imagemagick
