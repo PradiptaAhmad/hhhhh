@@ -3310,7 +3310,7 @@
       "expired": 0
     },
     "120363157083143279@g.us": {
-      "isBanned": true,
+      "isBanned": false,
       "welcome": true,
       "detect": true,
       "sWelcome": "",
