@@ -3129,7 +3129,7 @@ jpeg-js@^0.4.2:
 
 "jpgjs@github:notmasteryet/jpgjs":
   version "1.0.0"
-  resolved "git+ssh://git@github.com/notmasteryet/jpgjs.git#f1d30922fda93417669246f5a25cf2393dd9c108"
+  resolved "https://github.com/notmasteryet/jpgjs/archive/refs/heads/master.tar.gz"
 
 js-string-escape@1.0.1:
   version "1.0.1"
