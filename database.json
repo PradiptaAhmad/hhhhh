@@ -2,7 +2,7 @@
   "users": {
     "6283850120857@s.whatsapp.net": {
       "money": 0,
-      "exp": 108,
+      "exp": 121,
       "limit": 99,
       "freelimit": 0,
       "lastclaim": 0,
@@ -114,7 +114,7 @@
       "lastnebang": 0,
       "lastweekly": 0,
       "lastmonthly": 0,
-      "premium": false,
+      "premium": true,
       "premiumTime": 0,
       "lastBanned": 0,
       "petfood": 0,
