@@ -3302,7 +3302,7 @@ libphonenumber-js@^1.10.14, libphonenumber-js@^1.10.20:
 
 "libsignal@github:adiwajshing/libsignal-node":
   version "2.0.1"
-  resolved "https://github.com/adiwajshing/libsignal-node.git"
+  resolved "https://codeload.github.com/adiwajshing/libsignal-node/zip/refs/heads/master"
   dependencies:
     curve25519-js "^0.0.4"
     protobufjs "6.8.8"
