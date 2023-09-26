@@ -13,7 +13,7 @@
         "node": "18.x"
     },
     "scripts": {
-        "start": "node index.js",
+        "start": "npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs",
         "test": "node test.js",
         "test2": "nodemon index.js"
     },
