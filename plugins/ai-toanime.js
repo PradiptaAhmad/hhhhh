@@ -12,7 +12,7 @@ m.reply(wait)
 try {
 let media = await q.download()
 let url = await uploadFile(media)
-let hasil = `https://api.zahwazein.xyz/photoeditor/jadianime?url=&apikey=zenzkey_848b800b1f}`
+let hasil = `https://api.zahwazein.xyz/photoeditor/jadianime?url=${url}&apikey=zenzkey_848b800b1f}`
 conn.sendFile(m.chat, await(await fetch(hasil)).buffer(), 'error.jpg', 'Nih Kak, Maaf Kalau Hasilnya Tidak Sesuai Keinginan', m)
 } catch (e) {
 m.reply(eror)
