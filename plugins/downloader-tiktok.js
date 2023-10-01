@@ -22,16 +22,14 @@ try {
   let cap = `Nih Kak >,<`
   let anu = `*Nickname:* ${json.data.author.author}\n*Name:* ${json.data.author.author_name}`
   // await conn.sendMessage(m.chat, { video: { url: json.data.other_video_link[1] }, caption: cap }, { quoted: m })
-  tiktokSrapper.getVideoMeta(text).then((result) => {
-    const downloadOptions = {
-      noWaterMark: true, // Set to true to download without the watermark
-      hdVideo: true, // Set to true to download in HD quality if available
-    };
-    return TikTokScraper.downloadVideo(videoMeta.collector[0], downloadOptions);
-  })
-  .then((video) => {
-    conn.sendFile(m.chat, video, 'video.mp4', anu, m)
-  })
+
+  let { ttvideo } = await TikTokScraper.video(text, {
+    download: true,
+  });
+
+conn.sendFile(m.chat, ttvideo, 'video.mp4', cap, m, {
+  mimetype: 'video/mp4',
+});
   } catch (e) {
   m.reply(`❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan`)
   }
