@@ -53,7 +53,7 @@ try {
        method: 'GET',
        url: 'https://tiktok-download-video-no-watermark.p.rapidapi.com/tiktok/info',
        params: {
-         url: `${text}`,
+         url: text,
        },
        headers: {
          'X-RapidAPI-Key': 'de5a77114cmsh831df230b6b6e3bp1ed414jsn7444a51c5591',
