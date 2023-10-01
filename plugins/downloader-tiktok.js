@@ -30,7 +30,7 @@ try {
     return TikTokScraper.downloadVideo(videoMeta.collector[0], downloadOptions);
   })
   .then((video) => {
-    conn.sednFile(m.chat, video, 'video.mp4', anu, m)
+    conn.sendFile(m.chat, video, 'video.mp4', anu, m)
   })
   } catch (e) {
   m.reply(`❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan`)
