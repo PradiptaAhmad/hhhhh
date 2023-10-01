@@ -17,8 +17,8 @@ let { key } = await conn.sendMessage(m.chat, {text: '_Loading_'})//Pengalih isu
 for (let i = 0; i < loadd.length; i++) {
 await conn.sendMessage(m.chat, {text: loadd[i], edit: key })}
 try {
-  let res = await fetch(`https://api.xyroinee.xyz/api/downloader/tiktok?url=${text}&apikey=${global.xyro}`)
-  let json = await res.json()
+  // let res = await fetch(`https://api.xyroinee.xyz/api/downloader/tiktok?url=${text}&apikey=${global.xyro}`)
+  // let json = await res.json()
   let cap = `Nih Kak >,<`
   // let anu = `*Nickname:* ${json.data.author.author}\n*Name:* ${json.data.author.author_name}`
   // await conn.sendMessage(m.chat, { video: { url: json.data.other_video_link[1] }, caption: cap }, { quoted: m })
