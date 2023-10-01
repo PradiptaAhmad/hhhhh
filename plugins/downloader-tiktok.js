@@ -36,6 +36,10 @@ try {
         mimetype: 'video/mp4',
       })
     }
+    .catch((err) => {
+      console.error(err)
+      m.reply('Error')
+    })
   )} catch (e) {
   m.reply(`❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan ${text} ${e}`)
   }
