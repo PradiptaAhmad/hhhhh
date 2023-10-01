@@ -28,7 +28,13 @@ try {
     download: true,
     noWaterMark: true,
     hdVideo: true,
-    filepath: "./tmp/video.mp4"
+    filepath: "./tmp/video.mp4",
+    headers: {
+      httpsAgent: proxyAgent,
+    },
+    sessionList: [
+      'msToken=adasdasfsadgadfsbsH0g=; Path=/; Domain=tiktok.com; Secure; Expires=2022-10-10T23:18:07.229Z;'
+    ]
   }
 
   tiktokSrapper.getVideoMeta(text, option)
