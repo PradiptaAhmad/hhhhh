@@ -1,7 +1,6 @@
 import yts from 'yt-search';
-import fetch from 'node-fetch';
-import { JSDOM } from 'jsdom';
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
+const { WAMessageStubType } = (await import('@adiwajshing/baileys')).default
 
 // Define a variable to store the download URL
 let downloadUrl = '';

@@ -1,4 +1,5 @@
 import fetch from 'node-fetch'
+import tiktokSrapper from 'tiktok-scraper'
 
 let handler = async (m, { conn, usedPrefix, args, command, text }) => {
 if (!text) throw `❓Linknya Mana?`
@@ -20,7 +21,17 @@ try {
   let json = await res.json()
   let cap = `Nih Kak >,<`
   let anu = `*Nickname:* ${json.data.author.author}\n*Name:* ${json.data.author.author_name}`
-  await conn.sendMessage(m.chat, { video: { url: json.data.other_video_link[1] }, caption: cap }, { quoted: m })
+  // await conn.sendMessage(m.chat, { video: { url: json.data.other_video_link[1] }, caption: cap }, { quoted: m })
+  tiktokSrapper.getVideoMeta(text).then((result) => {
+    const downloadOptions = {
+      noWaterMark: true, // Set to true to download without the watermark
+      hdVideo: true, // Set to true to download in HD quality if available
+    };
+    return TikTokScraper.downloadVideo(videoMeta.collector[0], downloadOptions);
+  })
+  .then((video) => {
+    conn.sednFile(m.chat, video, 'video.mp4', anu, m)
+  })
   } catch (e) {
   m.reply(`❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan`)
   }
