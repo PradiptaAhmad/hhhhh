@@ -28,14 +28,13 @@ try {
     download: true,
     noWaterMark: true,
     hdVideo: true,
+    filepath: "./tmp/video.mp4"
   }
 
   tiktokSrapper.getVideoMeta(text, option)
     .then((result) => {
       console.log(result)
-      conn.sendFile(m.chat, result.collector[0].videoUrl, 'video.mp4', cap, m, {
-        mimetype: 'video/mp4',
-      })
+      conn.sendMessage(m.chat, { video: "./tmp/video.mp4", caption: cap }, { quoted: m, mimetype: "video/mp4"})
     })
     .catch((err) => {
         console.log(err);
