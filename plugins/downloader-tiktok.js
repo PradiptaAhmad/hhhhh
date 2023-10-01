@@ -28,14 +28,18 @@ try {
     download: true,
     noWaterMark: true,
     hdVideo: true,
-    filepath: "./tmp/video.mp4",
+    filepath: './tmp/video.mp4',
     headers: {
-      httpsAgent: proxyAgent,
+      cookie: YOUR_COOKIE,
+      'user-agent':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36',
+      accept:
+        'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
     },
     sessionList: [
-      'msToken=adasdasfsadgadfsbsH0g=; Path=/; Domain=tiktok.com; Secure; Expires=2022-10-10T23:18:07.229Z;'
-    ]
-  }
+      'msToken=adasdasfsadgadfsbsH0g=; Path=/; Domain=tiktok.com; Secure; Expires=2022-10-10T23:18:07.229Z;',
+    ],
+  };
 
   tiktokSrapper.getVideoMeta(text, option)
     .then((result) => {
