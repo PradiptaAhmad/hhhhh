@@ -41,6 +41,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
      let { audio } = await youtubedl(url).catch(
        async (_) => await youtubedlv2(url)
      );
+      let msg = await conn.sendFile(m.chat, null, null, text, m);
      conn.sendFile(
        m.chat,
        await audio['128kbps'].download(),
