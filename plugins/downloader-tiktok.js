@@ -30,7 +30,6 @@ try {
     hdVideo: true,
     filepath: './tmp/video.mp4',
     headers: {
-      cookie: YOUR_COOKIE,
       'user-agent':
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36',
       accept:
