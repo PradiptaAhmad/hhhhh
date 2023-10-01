@@ -37,7 +37,7 @@ try {
       })
     }
   )} catch (e) {
-  m.reply(`❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan`)
+  m.reply(`❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan ${text}`)
   }
   }
 handler.help = ['tiktok']
