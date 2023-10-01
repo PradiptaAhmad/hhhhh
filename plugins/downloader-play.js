@@ -7,7 +7,7 @@ import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
 let downloadUrl = '';
 
 const ytIdRegex =
-  '/(?:http(?:s|)://|)(?:(?:www.|)youtube(?:-nocookie|).com/(?:watch?.*(?:|&)v=|embed/|v/)|youtu.be/)([-_0-9A-Za-z]{11})/';
+  "/(?:http(?:s|):\/\/|)(?:(?:www\.|)youtube(?:\-nocookie|)\.com\/(?:watch\?.*(?:|\&)v=|embed\/|v\/)|youtu\.be\/)([-_0-9A-Za-z]{11})/";
 
 var handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw 'Judulnya?';
@@ -38,19 +38,17 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
       m
     );
 
-    let { audio } = await youtubedl(url).catch(
-      async (_) => await youtubedlv2(url)
-    );
-    let msg = await conn.sendFile(m.chat, null, null, text, m);
-    conn.sendFile(
-      m.chat,
-      await audio['128kbps'].download(),
-      title + '.mp3',
-      '',
-      msg,
-      false,
-      { mimetype: 'audio/mpeg' }
-    );
+     let { audio } = await youtubedl(url).catch(
+       async (_) => await youtubedlv2(url)
+     );
+     conn.sendFile(
+       m.chat,
+       await audio['128kbps'].download(),
+       title + '.mp3',
+       '',
+       false,
+       { mimetype: 'audio/mpeg' }
+     );
   } catch (error) {
     console.error(error);
     m.reply(error);
