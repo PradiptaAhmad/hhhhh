@@ -1,7 +1,6 @@
 import yts from 'yt-search';
 import fetch from 'node-fetch';
 import { JSDOM } from 'jsdom';
-import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
 
 // Define a variable to store the download URL
 let downloadUrl = '';
@@ -38,19 +37,34 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
       m
     );
 
-     let { audio } = await youtubedl(url).catch(
-       async (_) => await youtubedlv2(url)
-     );
-      let msg = await conn.sendFile(m.chat, null, null, text, m);
-     conn.sendFile(
-       m.chat,
-       await audio['128kbps'].download(),
-       title + '.mp3',
-       '',
-       msg,
-       false,
-       { mimetype: 'audio/mpeg' }
-     );
+    // Call the yta function to retrieve the download link
+    const audioInfo = await yta(url);
+
+    // Set the download URL
+    downloadUrl = audioInfo.dl_link;
+
+    // Prepare the document to send as a response
+    let doc = {
+      audio: {
+        url: downloadUrl,
+      },
+      mimetype: 'audio/mp4',
+      fileName: `${title}`,
+      contextInfo: {
+        externalAdReply: {
+          showAdAttribution: true,
+          mediaType: 2,
+          mediaUrl: url,
+          title: title,
+          body: wm,
+          sourceUrl: url,
+          thumbnail: await (await conn.getFile(thumbnail)).data,
+        },
+      },
+    };
+
+    // Send the audio document as a response
+    conn.sendMessage(m.chat, doc, { quoted: m });
   } catch (error) {
     console.error(error);
     m.reply(error);
