@@ -1,5 +1,4 @@
-import axios from 'axios'
-import tiktokSrapper from 'tiktok-scraper'
+import fetch from 'node-fetch'
 
 let handler = async (m, { conn, usedPrefix, args, command, text }) => {
 if (!text) throw `❓Linknya Mana?`
@@ -17,61 +16,15 @@ let { key } = await conn.sendMessage(m.chat, {text: '_Loading_'})//Pengalih isu
 for (let i = 0; i < loadd.length; i++) {
 await conn.sendMessage(m.chat, {text: loadd[i], edit: key })}
 try {
-  // let res = await fetch(`https://api.xyroinee.xyz/api/downloader/tiktok?url=${text}&apikey=${global.xyro}`)
-  // let json = await res.json()
+  let res = await fetch(`https://api.xyroinee.xyz/api/downloader/tiktok?url=${text}&apikey=${global.xyro}`)
+  let json = await res.json()
   let cap = `Nih Kak >,<`
-  // let anu = `*Nickname:* ${json.data.author.author}\n*Name:* ${json.data.author.author_name}`
-  // await conn.sendMessage(m.chat, { video: { url: json.data.other_video_link[1] }, caption: cap }, { quoted: m })
-
-  // const option = {
-  //   download: true,
-  //   noWaterMark: true,
-  //   hdVideo: true,
-  //   filepath: './tmp/video.mp4',
-  //   headers: {
-  //     'user-agent':
-  //       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.80 Safari/537.36',
-  //     referer: 'https://www.tiktok.com/',
-  //     cookie: 'tt_webid_v2=689854141086886123',
-  //   },
-  //   sessionList: [
-  //     'msToken=adasdasfsadgadfsbsH0g=; Path=/; Domain=tiktok.com; Secure; Expires=2022-10-10T23:18:07.229Z;',
-  //   ],
-  // };
-
-  // tiktokSrapper.getVideoMeta(text, option)
-  //   .then((result) => {
-  //     console.log(result)
-  //     conn.sendMessage(m.chat, { video: "./tmp/video.mp4", caption: cap }, { quoted: m, mimetype: "video/mp4"})
-  //   })
-  //   .catch((err) => {
-  //       console.log(err);
-  //       m.reply('❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan');
-  //     });
-    
-     const options = {
-       method: 'GET',
-       url: 'https://tiktok-download-video-no-watermark.p.rapidapi.com/tiktok/info',
-       params: {
-         url: text,
-       },
-       headers: {
-         'X-RapidAPI-Key': 'de5a77114cmsh831df230b6b6e3bp1ed414jsn7444a51c5591',
-         'X-RapidAPI-Host': 'tiktok-download-video-no-watermark.p.rapidapi.com',
-       },
-     };
-
-     try {
-       conn.sendFile(m.chat, await axios.request(options), cap, m);
-     } catch (error) {
-       console.error(error);
-     }
+  let anu = `*Nickname:* ${json.data.author.author}\n*Name:* ${json.data.author.author_name}`
+  await conn.sendMessage(m.chat, { video: { url: json.data.other_video_link[1] }, caption: cap }, { quoted: m })
   } catch (e) {
-    m.reply(`❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan ${text} ${e}`)
+  m.reply(`❗Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan`)
   }
   }
-
- 
 handler.help = ['tiktok']
 handler.tags = ['downloader']
 handler.command = /^(tiktok|tt|ttdl|tiktokdl)$/i
